@@ -1,0 +1,11 @@
+@use "sass:math";
+// 文字フォントの種類
+$base-font: "Patua One", "Noto Serif JP", serif;
+$second-font: "Amatic SC", sans-serif;
+$third-font: "Damion",cursive;
+
+// 文字の太さ
+$regular: 300;
+$normal: 400;
+$medium: 500;
+$bold: 700;
