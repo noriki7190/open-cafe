@@ -213,6 +213,7 @@ select::-ms-expand {
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 1080/795;
+  height: calc(100vh - 60px);
 }
 @media screen and (max-width: 768px) {
   .main-visual__img img {
@@ -319,7 +320,7 @@ select::-ms-expand {
 .main-visual__news a::before {
   content: "";
   width: 164px;
-  height: 95px;
+  height: 97px;
   background-image: url(../images/img_balloon-pickup.svg);
   position: absolute;
   top: -76px;

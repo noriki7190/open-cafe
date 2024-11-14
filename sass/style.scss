@@ -74,7 +74,6 @@
 // メインビジュアル
 .main-visual {
   width: calc(100% - 200px);
-  // height: calc(100vh - 60px);
   margin-left: auto;
   position: relative;
   z-index: 1;
@@ -85,6 +84,7 @@
 .main-visual__img img {
   object-fit: cover;
   aspect-ratio: 1080 / 795;
+  height: calc(100vh - 60px);
 
   @include mq('md') {
     height: 100vh;
@@ -193,7 +193,7 @@
 .main-visual__news a::before {
   content: "";
   width: 164px;
-  height: 95px;
+  height: 97px;
   background-image: url(../images/img_balloon-pickup.svg);
   position: absolute;
   top: -76px;
