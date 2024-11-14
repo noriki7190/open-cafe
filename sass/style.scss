@@ -5,17 +5,37 @@
 // ヘッダー
 .header {
   width: 200px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 100;
+
+  @include mq('lg') {}
 }
 
 .header__inner {
   padding: 27px 16px 12px 18px;
 
+
+  @include mq('md') {
+    padding-top: 10px;
+    padding-left: 14px;
+  }
 }
 
-.header__logo {}
+.header__logo {
+  @include mq('md') {
+    width: 120px;
+    height: 63px;
+  }
+}
+
+
+.header__menu {
+  @include mq('lg') {
+    display: none;
+  }
+}
 
 .header__nav {
   padding-top: 53px;
@@ -54,9 +74,39 @@
 // メインビジュアル
 .main-visual {
   width: calc(100% - 200px);
+  // height: calc(100vh - 60px);
   margin-left: auto;
   position: relative;
   z-index: 1;
+}
+
+.main-visual__img {}
+
+.main-visual__img img {
+  object-fit: cover;
+  aspect-ratio: 1080 / 795;
+
+  @include mq('md') {
+    height: 100vh;
+  }
+}
+
+.main-visual .swiper-slide {}
+
+.main-visual .swiper-pagination {
+  text-align: left;
+  margin-left: 14px;
+  bottom: 10px;
+}
+
+.main-visual .swiper-pagination-bullet {
+  margin: 0 8px !important;
+  background-color: $white;
+  opacity: 1;
+}
+
+.main-visual .swiper-pagination-bullet-active {
+  background-color: #D59B71;
 }
 
 .main-visual::after {
@@ -65,26 +115,126 @@
   height: 398px;
   background-color: $beige-dark;
   position: absolute;
-  z-index: -1;
+  z-index: -100;
   bottom: -60px;
   right: 0;
 
+  @include mq('md') {
+    display: none;
+  }
 }
 
-.main-visual__text-wrap {
+.main-visual__contents {
   position: absolute;
-  bottom: 61px;
-  left: 56px;
+  bottom: 23px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  // height: 100%;
+  padding: 0 20px 0 56px;
+
+  @include mq('md') {
+    bottom: 32px;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 124px;
+    align-items: start;
+  }
+
 }
 
-.main-visual__text {
+.main-visual__title {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-visual__title span {
   color: $white;
   margin-top: 1rem;
   font-size: 20px;
   font-weight: $bold;
-  letter-spacing: .2em;
+  letter-spacing: .14em;
+
+  @include mq('md') {
+    font-size: 16px;
+    line-height: 2;
+  }
+
+  @include mq('md') {
+    margin-top: 0;
+    letter-spacing: .14em;
+  }
 }
 
+.main-visual__news a {
+  width: 388px;
+  height: 152px;
+  background-color: #fff;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  position: relative;
+  color: inherit;
+  opacity: 1;
+  transition: .3s transform;
+
+  &:hover {
+    & .main-visual__news-img img {
+      transform: scale(1.1);
+      transition: .3s transform;
+    }
+  }
+}
+
+.main-visual__news a::before {
+  content: "";
+  width: 164px;
+  height: 95px;
+  background-image: url(../images/img_balloon-pickup.svg);
+  position: absolute;
+  top: -76px;
+  right: 2px;
+}
+
+@include mq('lg') {
+  .main-visual {
+    width: 100%;
+  }
+}
+
+.main-visual__news-category {
+  position: absolute;
+  top: 6px;
+  left: -8px;
+  z-index: 10;
+}
+
+.main-visual__news-img {
+  flex: 0 0 120px;
+  overflow: hidden;
+}
+
+.main-visual__news-contents {
+  margin-top: -5px;
+}
+
+.main-visual__news-date {
+  font-size: 12px;
+  line-height: calc(17 / 12);
+  font-weight: $normal;
+  font-family: "noto Serif JP", serif;
+}
+
+.main-visual__news-title {
+  font-size: 14px;
+  line-height: calc(24/ 14);
+  font-weight: $bold;
+  margin-top: 10px;
+}
 
 // 共通パーツ
 .container {
@@ -95,6 +245,38 @@
   @include mq(md) {
     padding: 0 20px;
   }
+}
+
+.category {
+  display: inline-block;
+  padding: 3px 10px 4px 15px;
+  font-size: 12px;
+  line-height: calc(17 / 12);
+  font-weight: $bold;
+  background-color: $black;
+  color: $white;
+  position: relative;
+}
+
+.category::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  border-style: solid;
+  border-color: transparent #aaa transparent transparent;
+  border-width: 0px 8px 4px 0px;
+}
+
+.category::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -.5em;
+  border-top: 1em solid $black;
+  border-bottom: 1em solid $black;
+  border-right: .5em solid transparent;
+  border-left: .5em solid transparent;
 }
 
 .md-none {

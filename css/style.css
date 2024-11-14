@@ -89,10 +89,6 @@ img {
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
-  margin-top: 1em;
-}
-
 /* Inherit fonts for inputs and buttons */
 input,
 button,
@@ -144,13 +140,32 @@ select::-ms-expand {
 
 .header {
   width: 200px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
+  z-index: 100;
 }
-
 .header__inner {
   padding: 27px 16px 12px 18px;
+}
+@media screen and (max-width: 768px) {
+  .header__inner {
+    padding-top: 10px;
+    padding-left: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header__logo {
+    width: 120px;
+    height: 63px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header__menu {
+    display: none;
+  }
 }
 
 .header__nav {
@@ -194,29 +209,156 @@ select::-ms-expand {
   z-index: 1;
 }
 
+.main-visual__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1080/795;
+}
+@media screen and (max-width: 768px) {
+  .main-visual__img img {
+    height: 100vh;
+  }
+}
+
+.main-visual .swiper-pagination {
+  text-align: left;
+  margin-left: 14px;
+  bottom: 10px;
+}
+
+.main-visual .swiper-pagination-bullet {
+  margin: 0 8px !important;
+  background-color: #fff;
+  opacity: 1;
+}
+
+.main-visual .swiper-pagination-bullet-active {
+  background-color: #D59B71;
+}
+
 .main-visual::after {
   content: "";
   width: 91.11%;
   height: 398px;
   background-color: #EAE0D5;
   position: absolute;
-  z-index: -1;
+  z-index: -100;
   bottom: -60px;
   right: 0;
 }
-
-.main-visual__text-wrap {
-  position: absolute;
-  bottom: 61px;
-  left: 56px;
+@media screen and (max-width: 768px) {
+  .main-visual::after {
+    display: none;
+  }
 }
 
-.main-visual__text {
+.main-visual__contents {
+  position: absolute;
+  bottom: 23px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px 0 56px;
+}
+@media screen and (max-width: 768px) {
+  .main-visual__contents {
+    bottom: 32px;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 124px;
+    align-items: start;
+  }
+}
+
+.main-visual__title {
+  margin-top: -10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-visual__title span {
   color: #fff;
   margin-top: 1rem;
   font-size: 20px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.14em;
+}
+@media screen and (max-width: 768px) {
+  .main-visual__title span {
+    font-size: 16px;
+    line-height: 2;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-visual__title span {
+    margin-top: 0;
+    letter-spacing: 0.14em;
+  }
+}
+
+.main-visual__news a {
+  width: 388px;
+  height: 152px;
+  background-color: #fff;
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  position: relative;
+  color: inherit;
+  opacity: 1;
+  transition: 0.3s transform;
+}
+.main-visual__news a:hover .main-visual__news-img img {
+  transform: scale(1.1);
+  transition: 0.3s transform;
+}
+
+.main-visual__news a::before {
+  content: "";
+  width: 164px;
+  height: 95px;
+  background-image: url(../images/img_balloon-pickup.svg);
+  position: absolute;
+  top: -76px;
+  right: 2px;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-visual {
+    width: 100%;
+  }
+}
+.main-visual__news-category {
+  position: absolute;
+  top: 6px;
+  left: -8px;
+  z-index: 10;
+}
+
+.main-visual__news-img {
+  flex: 0 0 120px;
+  overflow: hidden;
+}
+
+.main-visual__news-contents {
+  margin-top: -5px;
+}
+
+.main-visual__news-date {
+  font-size: 12px;
+  line-height: 1.4166666667;
+  font-weight: 400;
+  font-family: "noto Serif JP", serif;
+}
+
+.main-visual__news-title {
+  font-size: 14px;
+  line-height: 1.7142857143;
+  font-weight: 700;
+  margin-top: 10px;
 }
 
 .container {
@@ -228,6 +370,38 @@ select::-ms-expand {
   .container {
     padding: 0 20px;
   }
+}
+
+.category {
+  display: inline-block;
+  padding: 3px 10px 4px 15px;
+  font-size: 12px;
+  line-height: 1.4166666667;
+  font-weight: 700;
+  background-color: #222;
+  color: #fff;
+  position: relative;
+}
+
+.category::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  border-style: solid;
+  border-color: transparent #aaa transparent transparent;
+  border-width: 0px 8px 4px 0px;
+}
+
+.category::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -0.5em;
+  border-top: 1em solid #222;
+  border-bottom: 1em solid #222;
+  border-right: 0.5em solid transparent;
+  border-left: 0.5em solid transparent;
 }
 
 .md-none {
