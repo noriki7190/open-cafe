@@ -11,6 +11,7 @@
 .main-visual__img img {
   object-fit: cover;
   aspect-ratio: 1080 / 795;
+  width: 100%;
   height: calc(100vh - 60px);
 
   @include mq('md') {
@@ -210,7 +211,7 @@
   justify-content: space-between;
   flex-direction: row-reverse;
   align-items: center;
-  gap: 80px;
+  gap: 40px;
 
   @include mq('md') {
     flex-direction: column;
@@ -220,7 +221,7 @@
 }
 
 .top-concept__contents {
-  flex: 0 1 470px;
+  flex: 0 0 470px;
 }
 
 .top-concept__lead {
