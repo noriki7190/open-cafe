@@ -1,6 +1,303 @@
 @use "./base/base";
 @use "./base/reset";
 @use "./global" as *;
-@use "common";
-@use "header";
-@use "top";
+
+body {
+  background-color: $beige-light;
+}
+
+// レイアウト
+.l-mv {
+  display: flex;
+  position: relative;
+}
+
+// ヘッダー
+.header {
+  @include mq('lg') {
+    // display: none;
+    position: absolute;
+    top: 10;
+    left: 20;
+    z-index: 10;
+  }
+}
+
+.header__inner {
+  padding: 27px 16px 12px;
+}
+
+.header__logo {}
+
+.header__menu {
+  @include mq('lg') {
+    display: none;
+  }
+}
+
+.header__nav {
+  margin-top: 53px;
+}
+
+.header__list {}
+
+.header__item {
+  &+& {
+    margin-top: 31px;
+  }
+}
+
+.header__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: inherit;
+}
+
+.header__link-en {
+  text-transform: uppercase;
+  line-height: 1.25;
+  letter-spacing: .12em;
+}
+
+.header__link-jp {
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: $medium;
+  margin-top: 6px;
+}
+
+.header__sns-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 60px;
+}
+
+.header__sns-item {}
+
+// メインビジュアル
+.mv {
+  width: calc(100% - 200px);
+  height: auto;
+  position: relative;
+  z-index: 1;
+
+  @include mq('lg') {
+    width: 100%;
+    height: 100vh;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 338px;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    opacity: .4;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    width: 91.1%;
+    height: 398px;
+    position: absolute;
+    bottom: -60px;
+    right: 0;
+    background-color: $beige-dark;
+  }
+}
+
+
+// swiper
+.mv {
+  .swiper {
+    height: 100%;
+    position: static;
+  }
+
+  .swiper-wrapper {
+    height: 100%;
+  }
+
+  .swiper-slide {
+    // width: 100%;
+    height: inherit;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+  }
+
+  .swiper-pagination {
+    text-align: left;
+    margin-left: 18px;
+  }
+
+  .swiper-pagination-bullet {
+    margin: 0 8px !important;
+    opacity: 1;
+    background-color: $white;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #D59B71;
+  }
+}
+
+.mv__text {
+  position: absolute;
+  bottom: 61px;
+  left: 53px;
+  z-index: 10;
+  font-size: 20px;
+  line-height: 1.8;
+  font-weight: $bold;
+  color: $white;
+  letter-spacing: .14em;
+
+  @include mq('lg') {
+    left: 20px;
+    font-size: 16px;
+  }
+
+  @include mq('md') {
+    top: 168px;
+    bottom: auto;
+    line-height: 2;
+  }
+}
+
+.pickup-news {
+  position: absolute;
+  bottom: 23px;
+  right: 20px;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, .85);
+  padding: 16px;
+  width: 388px;
+  max-width: 100%;
+
+  @include mq('md') {
+    bottom: 32px;
+  }
+
+  & a {
+    color: inherit;
+    display: flex;
+    gap: 16px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -76px;
+    right: 0;
+    width: 164px;
+    height: 99px;
+    background-image: url(../images/img_balloon-pickup.svg);
+  }
+}
+
+.pickup-news__thumb {
+  width: 120px;
+  height: 120px;
+
+  @include mq('md') {
+    width: 100px;
+    height: 100px;
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+
+.pickup-news__cat {
+  position: absolute;
+  top: 8px;
+  left: -8px;
+}
+
+.pickup-news__contents {
+  flex: 0 0 220px;
+}
+
+.pickup-news__date {
+  font-size: 12px;
+  line-height: calc(17 / 12);
+  font-weight: $medium;
+  font-family: "noto Serif JP", serif;
+}
+
+.pickup-news__title {
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  font-weight: $bold;
+  margin-top: 10px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+
+
+  @include mq('md') {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+// 共通パーツ
+.cat {
+  display: inline-block;
+  font-size: 12px;
+  line-height: calc(17 / 12);
+  font-weight: $bold;
+  padding: 3px 15px 4px;
+  background-color: $black;
+  color: $white;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-color: $black transparent;
+    border-style: solid;
+    right: -6px;
+    border-width: 12px 6px 12px 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent #AAA transparent transparent;
+    border-width: 0px 8px 4px 0px;
+  }
+}
+
+.md-show {
+  display: none;
+
+  @include mq('md') {
+    display: block;
+  }
+}
