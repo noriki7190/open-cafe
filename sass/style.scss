@@ -259,7 +259,101 @@ body {
   }
 }
 
+// concept
+.top-concept {
+  padding-top: 160px;
+}
+
+.top-concept__container {}
+
+.top-concept__contents {}
+
+.top-concept__sub-title {}
+
+.top-concept__text {}
+
+.top-concept__btn {}
+
+.top-concept__img {}
+
 // 共通パーツ
+
+// 見出し
+.section-title {
+  display: grid;
+}
+
+.section-title__en {
+  font-size: 52px;
+  line-height: calc(66 / 52);
+  font-family: $second-font;
+
+  @include mq('md') {
+    font-size: 40px;
+    line-height: calc(50 / 40);
+  }
+}
+
+.section-title__jp {
+  font-size: 14px;
+  line-height: calc(20 / 14);
+  font-weight: $bold;
+  margin-top: 8px;
+
+  @include mq('md') {
+    font-size: 12px;
+    line-height: calc(17 / 12);
+    margin-top: 4px;
+  }
+}
+
+// ボタン
+.btn {
+  display: inline-block;
+  width: 280px;
+  max-width: 100%;
+  padding: 25px 16px 24px;
+  color: $white;
+  background-color: $black;
+  text-align: center;
+  font-weight: $bold;
+  position: relative;
+  transition: .3s transform;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    background-image: url(../images/arrow-right.svg);
+    width: 8px;
+    height: 14px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid $black;
+    border-bottom: 1px solid $black;
+    transition: .3s transform;
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: translate(8px, 8px);
+
+    &::after {
+      transform: translate(-8px, -8px);
+    }
+  }
+}
+
+// カテゴリ
 .cat {
   display: inline-block;
   font-size: 12px;
