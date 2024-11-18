@@ -252,7 +252,6 @@ body {
   -webkit-line-clamp: 3;
   line-clamp: 3;
 
-
   @include mq('md') {
     font-size: 12px;
     line-height: 1.5;
@@ -261,22 +260,126 @@ body {
 
 // concept
 .top-concept {
-  padding-top: 160px;
+  padding-top: 220px;
+  padding-bottom: 100px;
+
+  @include mq('md') {
+    padding-top: 120px;
+    padding-bottom: 73px;
+  }
+
+  position: relative;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    width: calc(50vw + 43%);
+    height: 300px;
+    background-color: $beige-dark;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    @include mq('md') {
+      height: 100px;
+    }
+  }
 }
 
-.top-concept__container {}
+.top-concept__container {
+  max-width: 1190px;
+  max-width: 1280px;
+  padding-right: 40px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 80px;
 
-.top-concept__contents {}
+  @include mq('md') {
+    padding-right: 0;
+    flex-direction: column;
+    gap: 85px;
+  }
 
-.top-concept__sub-title {}
+  &::before {
+    content: '';
+    width: 23.12%;
+    width: clamp(145px, 23.12%, 296px);
+    height: auto;
+    aspect-ratio: 296 / 265;
+    background-image: url(../images/bg_coffee-beans.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 17px;
+    right: -39px;
 
-.top-concept__text {}
+    @include mq('md') {
+      top: -20px;
+      right: -16px;
+    }
+  }
+}
 
-.top-concept__btn {}
+.top-concept__contents {
+  flex: 0 1 470px;
+  padding-top: 18px;
+  margin-right: auto;
 
-.top-concept__img {}
+  @include mq('md') {
+    padding: 0 20px;
+  }
+}
+
+.top-concept__sub-title {
+  margin-top: 42px;
+  font-size: 28px;
+  line-height: calc(60 / 28);
+  font-weight: $bold;
+  margin-bottom: 54px;
+  white-space: nowrap;
+
+  @include mq('md') {
+    margin-top: 36px;
+    font-size: 20px;
+    line-height: 2;
+    margin-bottom: 30px;
+  }
+}
+
+.top-concept__text {
+  margin-top: 29px;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.top-concept__btn {
+  margin-top: 53px;
+
+  @include mq('md') {
+    text-align: center;
+    margin-top: 53px;
+  }
+}
+
+.top-concept__img {
+  @include mq('md') {
+    width: 84%;
+  }
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
 
 // 共通パーツ
+
+.wrapper {
+  overflow: hidden;
+}
 
 // 見出し
 .section-title {
@@ -284,13 +387,16 @@ body {
 }
 
 .section-title__en {
+  font-family: $second-font;
   font-size: 52px;
   line-height: calc(66 / 52);
-  font-family: $second-font;
+  letter-spacing: .2em;
+  text-transform: uppercase;
 
   @include mq('md') {
     font-size: 40px;
     line-height: calc(50 / 40);
+    letter-spacing: .1em;
   }
 }
 
@@ -334,8 +440,8 @@ body {
   &::after {
     content: '';
     position: absolute;
-    bottom: -8px;
-    right: -8px;
+    bottom: -6px;
+    right: -6px;
     width: 100%;
     height: 100%;
     border-right: 1px solid $black;
@@ -345,10 +451,10 @@ body {
 
   &:hover {
     opacity: 1;
-    transform: translate(8px, 8px);
+    transform: translate(6px, 6px);
 
     &::after {
-      transform: translate(-8px, -8px);
+      transform: translate(-6px, -6px);
     }
   }
 }
