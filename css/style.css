@@ -490,6 +490,237 @@ body {
   height: auto;
 }
 
+.top-lunch {
+  margin-top: 240px;
+  background-color: #EAE0D5;
+  padding: 81px 50px 80px;
+  position: relative;
+}
+@media screen and (max-width: 1180px) {
+  .top-lunch {
+    margin-top: 120px;
+    padding: 58px 0 63px;
+  }
+}
+.top-lunch::before {
+  content: "";
+  width: 201px;
+  width: clamp(119px, 16.64%, 201px);
+  height: auto;
+  aspect-ratio: 201/228;
+  background-image: url(../images/bg_coffee-leaves.png);
+  background-size: cover;
+  position: absolute;
+  top: -131px;
+  right: -34px;
+}
+@media screen and (max-width: 768px) {
+  .top-lunch::before {
+    top: -179px;
+  }
+}
+
+.top-lunch .section-title {
+  text-align: center;
+}
+
+.top-lunch__box {
+  max-width: 1180px;
+  margin: 58px auto 0;
+  padding: 60px 40px 40px;
+  background-color: #fff;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .top-lunch__box {
+    padding: 39px 20px 20px;
+    margin-top: 61px;
+  }
+}
+.top-lunch__box::after {
+  content: "";
+  width: 308px;
+  height: 147px;
+  background-image: url(../images/img_balloon-special-lunch-set.svg);
+  background-size: cover;
+  position: absolute;
+  top: -69px;
+  right: -23px;
+}
+@media screen and (max-width: 1180px) {
+  .top-lunch__box::after {
+    width: 204px;
+    height: 100px;
+    top: -260px;
+    right: calc(50% - 204px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .top-lunch__box::after {
+    top: -230px;
+  }
+}
+
+.top-lunch__head {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-lunch__menu-list {
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 22px;
+}
+@media screen and (max-width: 1180px) {
+  .top-lunch__menu-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+.top-lunch__menu-item {
+  flex: 0 1 calc((100% - 60px) / 4);
+}
+.top-lunch__menu-item:nth-child(2n) {
+  margin-top: 40px;
+}
+@media screen and (max-width: 1180px) {
+  .top-lunch__menu-item:nth-child(2n) {
+    margin-top: 0;
+  }
+}
+
+.card__img img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+}
+
+.card__name {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  gap: 12px;
+}
+@media screen and (max-width: 768px) {
+  .card__name {
+    margin-top: 6px;
+    font-size: 14px;
+    gap: 6px;
+  }
+}
+
+.card__kinds {
+  font-size: 32px;
+  font-weight: 300;
+  color: #fff;
+  flex-shrink: 0;
+  width: 49px;
+  height: 49px;
+  background-color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 768px) {
+  .card__kinds {
+    margin-top: 3px;
+    font-size: 19px;
+    width: 24px;
+    height: 24px;
+    padding-top: 2px;
+  }
+}
+
+.top-lunch__detail {
+  margin-top: 56px;
+  background-color: #F7F6F4;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 0;
+}
+@media screen and (max-width: 1180px) {
+  .top-lunch__detail {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.top-lunch__detail-img img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 1180px) {
+  .top-lunch__price {
+    text-align: center;
+  }
+}
+
+.top-lunch__price-title {
+  text-align: right;
+  font-size: 20px;
+  font-family: "Noto Serif JP", serif;
+  font-weight: 700;
+  margin-top: 6px;
+}
+@media screen and (max-width: 1180px) {
+  .top-lunch__price-title {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .top-lunch__price-title {
+    font-size: 16px;
+  }
+}
+
+.top-lunch__price-amount {
+  display: inline-block;
+  font-family: "Damion", cursive;
+  font-size: 60px;
+  margin-top: -4px;
+  position: relative;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  white-space: nowrap;
+  background-image: url(../images/dotted.svg);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+@media screen and (max-width: 768px) {
+  .top-lunch__price-amount {
+    font-size: 40px;
+    background-size: 149% auto;
+  }
+}
+
+.top-lunch__price-note {
+  font-size: 14px;
+  text-align: right;
+  font-weight: 700;
+  font-family: "noto Serif JP", serif;
+  margin-top: 9px;
+}
+@media screen and (max-width: 1180px) {
+  .top-lunch__price-note {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .top-lunch__price-note {
+    font-size: 12px;
+  }
+}
+
 .wrapper {
   overflow: hidden;
 }

@@ -375,6 +375,234 @@ body {
   }
 }
 
+// ランチ
+.top-lunch {
+  margin-top: 240px;
+  background-color: $beige-dark;
+  padding: 81px 50px 80px;
+  position: relative;
+
+  @include mq('lg') {
+    margin-top: 120px;
+    padding: 58px 0 63px;
+  }
+
+  &::before {
+    content: '';
+    width: 201px;
+    width: clamp(119px, 16.64%, 201px);
+    height: auto;
+    aspect-ratio: 201 / 228;
+    background-image: url(../images/bg_coffee-leaves.png);
+    background-size: cover;
+    position: absolute;
+    top: -131px;
+    right: -34px;
+    z-index: 10;
+
+    @include mq('md') {
+      top: -179px;
+    }
+  }
+}
+
+.top-lunch .section-title {
+  text-align: center;
+}
+
+.top-lunch__box {
+  max-width: 1180px;
+  margin: 58px auto 0;
+  padding: 60px 40px 40px;
+  background-color: $white;
+  position: relative;
+
+  @include mq('md') {
+    padding: 39px 20px 20px;
+    margin-top: 61px;
+  }
+
+  &::after {
+    content: '';
+    width: 308px;
+    height: 147px;
+    background-image: url(../images/img_balloon-special-lunch-set.svg);
+    background-size: cover;
+    position: absolute;
+    top: -69px;
+    right: -23px;
+
+    @include mq('lg') {
+      width: 204px;
+      height: 100px;
+      top: -260px;
+      right: calc(50% - 204px);
+    }
+
+    @include mq('md') {
+      top: -230px;
+    }
+  }
+}
+
+.top-lunch__head {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-lunch__menu-list {
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 22px;
+
+  @include mq('lg') {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+.top-lunch__menu-item {
+  flex: 0 1 calc((100% - (20px * 3)) / 4);
+
+  &:nth-child(2n) {
+    margin-top: 40px;
+
+    @include mq('lg') {
+      margin-top: 0;
+    }
+  }
+}
+
+.card {}
+
+.card__img {
+  & img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+.card__name {
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: $bold;
+  display: flex;
+  gap: 12px;
+
+  @include mq('md') {
+    margin-top: 6px;
+    font-size: 14px;
+    gap: 6px;
+  }
+}
+
+.card__kinds {
+  font-size: 32px;
+  font-weight: $regular;
+  color: $white;
+  flex-shrink: 0;
+  width: 49px;
+  height: 49px;
+  background-color: $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mq('md') {
+    margin-top: 3px;
+    font-size: 19px;
+    width: 24px;
+    height: 24px;
+    padding-top: 2px;
+  }
+
+}
+
+.top-lunch__detail {
+  margin-top: 56px;
+  background-color: #F7F6F4;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 0;
+
+  @include mq('lg') {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.top-lunch__detail-img {
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.top-lunch__price {
+  @include mq('lg') {
+    text-align: center;
+  }
+}
+
+.top-lunch__price-title {
+  text-align: right;
+  font-size: 20px;
+  font-family: "Noto Serif JP", serif;
+  font-weight: $bold;
+  margin-top: 6px;
+
+  @include mq('lg') {
+    text-align: center;
+  }
+
+  @include mq('md') {
+    font-size: 16px;
+  }
+}
+
+.top-lunch__price-amount {
+  display: inline-block;
+  font-family: $third-font;
+  font-size: 60px;
+  margin-top: -4px;
+  position: relative;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  white-space: nowrap;
+  background-image: url(../images/dotted.svg);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+
+  @include mq('md') {
+    font-size: 40px;
+    background-size: 149% auto;
+  }
+}
+
+.top-lunch__price-note {
+  font-size: 14px;
+  text-align: right;
+  font-weight: $bold;
+  font-family: "noto Serif JP", serif;
+  margin-top: 9px;
+
+  @include mq('lg') {
+    text-align: center;
+  }
+
+  @include mq('md') {
+    font-size: 12px;
+  }
+}
+
 // 共通パーツ
 
 .wrapper {
