@@ -43,74 +43,150 @@
 
 <body>
   <div class="wrapper">
+    <div class="overlay" id="js-overlay"></div>
+    <header class="header" id="js-header">
+      <h1 class="header__logo">
+        <a href="#">
+          <img src="images/logo_light.svg" alt="Open Cafe dish & coffee" width="120" height="63">
+        </a>
+      </h1>
+      <button class="header__hamburger" type="button" id="js-hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="hamburger-menu">
+        <div class="hamburger-menu__container">
+          <div class="hamburger-menu__logo">
+            <img src="images/logo_light.svg" alt="Open Cafe" width="128" height="64">
+            <nav class="hamburger-menu__nav" aria-label="Hamburger Menu Navigation">
+              <ul class="hamburger-menu__list">
+                <li class="hamburger-menu__item">
+                  <a href="#" class="hamburger-menu__link" aria-label="Menu link">
+                    <span class="hamburger-menu__item-en">top</span>
+                    <span class="hamburger-menu__item-ja">トップ</span>
+                  </a>
+                </li>
+                <li class="hamburger-menu__item">
+                  <a href="#" class="hamburger-menu__link" aria-label="Menu link">
+                    <span class="hamburger-menu__item-en">concept</span>
+                    <span class="hamburger-menu__item-ja">コンセプト</span>
+                  </a>
+                </li>
+                <li class="hamburger-menu__item">
+                  <a href="#" class="hamburger-menu__link" aria-label="Menu link">
+                    <span class="hamburger-menu__item-en">menu</span>
+                    <span class="hamburger-menu__item-ja">メニュー</span>
+                  </a>
+                </li>
+                <li class="hamburger-menu__item">
+                  <a href="#" class="hamburger-menu__link" aria-label="Menu link">
+                    <span class="hamburger-menu__item-en">news</span>
+                    <span class="hamburger-menu__item-ja">お知らせ</span>
+                  </a>
+                </li>
+                <li class="hamburger-menu__item">
+                  <a href="#" class="hamburger-menu__link" aria-label="Menu link">
+                    <span class="hamburger-menu__item-en">shop</span>
+                    <span class="hamburger-menu__item-ja">店舗情報</span>
+                  </a>
+                </li>
+                <li class="hamburger-menu__item">
+                  <a href="#" class="hamburger-menu__link" aria-label="Menu link">
+                    <span class="hamburger-menu__item-en">gift</span>
+                    <span class="hamburger-menu__item-ja">ギフト・贈り物</span>
+                  </a>
+                </li>
+                <li class="hamburger-menu__item">
+                  <a href="#" class="hamburger-menu__link" aria-label="Menu link">
+                    <span class="hamburger-menu__item-en">contact</span>
+                    <span class="hamburger-menu__item-ja">お問い合わせ</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <ul class="hamburger-menu__sns-list">
+              <li class="hamburger-menu__sns-item">
+                <img src="images/icon_twitter-light.svg" alt="twitter" width="40" height="40">
+              </li>
+              <li class="hamburger-menu__sns-item">
+                <img src="images/icon_instagram-light.svg" alt="instagram" width="40" height="40">
+              </li>
+              <li class="hamburger-menu__sns-item">
+                <img src="images/icon_youtube-light.svg" alt="youtube" width="40" height="40">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <main>
       <div class="l-mv">
-        <header class="header">
-          <div class="header__inner">
-            <h1 class="header__logo">
-              <picture>
-                <source media="(max-width: 1180px)" srcset="images/logo_light.svg">
-                <img src="images/logo_dark.svg" alt="Open Cafe" width="166" height="93">
-              </picture>
-            </h1>
-            <div class="header__menu">
-              <nav class="header__nav">
-                <ul class="header__list">
-                  <li class="header__item">
-                    <a class="header__link" href="#">
-                      <span class="header__link-en">top</span>
-                      <span class="header__link-jp">トップ</span>
+        <div class="main-menu">
+          <div class="main-menu__inner">
+            <p class="main-menu__logo">
+              <img src="images/logo_dark.svg" alt="Open Cafe" width="166" height="93">
+            </p>
+            <div class="main-menu__menu">
+              <nav class="main-menu__nav">
+                <ul class="main-menu__list">
+                  <li class="main-menu__item">
+                    <a class="main-menu__link" href="#">
+                      <span class="main-menu__link-en">top</span>
+                      <span class="main-menu__link-jp">トップ</span>
                     </a>
                   </li>
-                  <li class="header__item">
-                    <a class="header__link" href="#">
-                      <span class="header__link-en">concept</span>
-                      <span class="header__link-jp">コンセプト</span>
+                  <li class="main-menu__item">
+                    <a class="main-menu__link" href="#">
+                      <span class="main-menu__link-en">concept</span>
+                      <span class="main-menu__link-jp">コンセプト</span>
                     </a>
                   </li>
-                  <li class="header__item">
-                    <a class="header__link" href="#">
-                      <span class="header__link-en">menu</span>
-                      <span class="header__link-jp">メニュー</span>
+                  <li class="main-menu__item">
+                    <a class="main-menu__link" href="#">
+                      <span class="main-menu__link-en">menu</span>
+                      <span class="main-menu__link-jp">メニュー</span>
                     </a>
                   </li>
-                  <li class="header__item">
-                    <a class="header__link" href="#">
-                      <span class="header__link-en">news</span>
-                      <span class="header__link-jp">お知らせ</span>
+                  <li class="main-menu__item">
+                    <a class="main-menu__link" href="#">
+                      <span class="main-menu__link-en">news</span>
+                      <span class="main-menu__link-jp">お知らせ</span>
                     </a>
                   </li>
-                  <li class="header__item">
-                    <a class="header__link" href="#">
-                      <span class="header__link-en">shop</span>
-                      <span class="header__link-jp">店舗情報</span>
+                  <li class="main-menu__item">
+                    <a class="main-menu__link" href="#">
+                      <span class="main-menu__link-en">shop</span>
+                      <span class="main-menu__link-jp">店舗情報</span>
                     </a>
                   </li>
-                  <li class="header__item">
-                    <a class="header__link" href="#">
-                      <span class="header__link-en">gift</span>
-                      <span class="header__link-jp">ギフト・贈り物</span>
+                  <li class="main-menu__item">
+                    <a class="main-menu__link" href="#">
+                      <span class="main-menu__link-en">gift</span>
+                      <span class="main-menu__link-jp">ギフト・贈り物</span>
                     </a>
                   </li>
-                  <li class="header__item">
-                    <a class="header__link" href="#">
-                      <span class="header__link-en">contact</span>
-                      <span class="header__link-jp">お問い合わせ</span>
+                  <li class="main-menu__item">
+                    <a class="main-menu__link" href="#">
+                      <span class="main-menu__link-en">contact</span>
+                      <span class="main-menu__link-jp">お問い合わせ</span>
                     </a>
                   </li>
                 </ul>
               </nav>
-              <ul class="header__sns-list">
-                <li class="header__sns-item"><a href="#"><img src="images/icon_twitter-dark.svg" alt="twitterのリンク"
+              <ul class="main-menu__sns-list">
+                <li class="main-menu__sns-item"><a href="#"><img src="images/icon_twitter-dark.svg" alt="twitterのリンク"
                       width="24" height="24"></a></li>
-                <li class="header__sns-item"><a href="#"><img src="images/icon_instagram-dark.svg" alt="instagramのリンク"
-                      width="24" height="24"></a></li>
-                <li class="header__sns-item"><a href="#"><img src="images/icon_youtube-dark.svg" alt="youtubeのリンク"
+                <li class="main-menu__sns-item"><a href="#"><img src="images/icon_instagram-dark.svg"
+                      alt="instagramのリンク" width="24" height="24"></a></li>
+                <li class="main-menu__sns-item"><a href="#"><img src="images/icon_youtube-dark.svg" alt="youtubeのリンク"
                       width="24" height="24"></a></li>
               </ul>
             </div>
           </div>
-        </header>
+        </div>
 
         <!-- mv -->
         <div class="mv">
@@ -147,7 +223,7 @@
             <div class="swiper-pagination"></div>
           </div>
           <p class="mv__text">パスタとコーヒーが<br class="md-show">とってもおいしい、<br>ほっと落ち着くのんびり空間。</p>
-          <article class="pickup-news">
+          <div class="pickup-news">
             <span class="pickup-news__cat cat">カテゴリ</span>
             <a href="#">
               <div class="pickup-news__thumb">
@@ -158,7 +234,7 @@
                 <p class="pickup-news__title">ダミー_国内外から賞賛を受けた選りすぐりのデザイナーが集結し、あらゆる空間が誕生。</p>
               </div>
             </a>
-          </article>
+          </div>
         </div>
       </div>
 
@@ -619,12 +695,25 @@
               </dl>
             </div>
           </div>
-
         </div>
       </section>
     </main>
 
-    <footer class="footer"></footer>
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__pagetop" id="js-page-top"><a href="#" class="footer__pagetop-link"
+            aria-label="Back to top"><img src="images/icon_arrow-top.svg" alt="トップへ戻る"></a></div>
+        <ul class="footer__sns-list">
+          <li class="footer__sns-item"><a href="#" class="footer__sns-link" aria-label="Twitter"><img
+                src="images/icon_twitter-light.svg" alt="Twitter" width="24" height="24"></a></li>
+          <li class="footer__sns-item"><a href="#" class="footer__sns-link" aria-label="Instagram"><img
+                src="images/icon_instagram-light.svg" alt="Instagram" width="24" height="24"></a></li>
+          <li class="footer__sns-item"><a href="#" class="footer__sns-link" aria-label="YouTube"><img
+                src="images/icon_youtube-light.svg" alt="YouTube" width="24" height="24"></a></li>
+        </ul>
+      </div>
+      <small class="footer__copyright">&copy;2000-2021 open cafe. All Rights Reserved.</small>
+    </footer>
   </div>
 </body>
 
