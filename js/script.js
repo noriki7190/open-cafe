@@ -14,11 +14,38 @@ $(function () {
     },
   });
 
-  // ハンバーガーメニュー
-  const header = $("#js-header");
-  const hamburger = $("#js-hamburger");
-  $('#js-hamburger').on('click', function () {
-    $('body').toggleClass('is-open');
+  // ハンバーガーボタンの表示
+  const mainMenu = document.querySelector("#js-main-menu");
+  const hamburger = document.querySelector("#js-hamburger");
+  const overlay = document.querySelector("#js-overlay");
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        hamburger.classList.remove('is-show');
+        console.log('isIntersecting');
+      } else {
+        hamburger.classList.add('is-show');
+        console.log('isNotIntersecting');
+      }
+    }
+  }, options);
+  observer.observe(mainMenu);
+
+  // ハンバーガーメニューの開閉
+  // hamburger.on('click', function () {
+  //   $('body').toggleClass('is-open');
+  // });
+  hamburger.addEventListener("click", function () {
+    document.body.classList.toggle("is-open");
+  });
+  overlay.addEventListener("click", function () {
+    document.body.classList.remove("is-open");
   });
 
 
