@@ -567,7 +567,7 @@ html:has(.is-open) {
     width: clamp(145px, 23.12%, 296px);
     height: auto;
     aspect-ratio: 296 / 265;
-    background-image: url(../images/bg_coffee-beans.png);
+    background-image: image-set(url(../images/bg_coffee-beans.png) 1x, url(../images/bg_coffee-beans@2x.png) 2x);
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -651,7 +651,7 @@ html:has(.is-open) {
     width: clamp(119px, 16.64%, 201px);
     height: auto;
     aspect-ratio: 201 / 228;
-    background-image: url(../images/bg_coffee-leaves.png);
+    background-image: image-set(url(../images/bg_coffee-leaves.png) 1x, url(../images/bg_coffee-leaves@2x.png) 2x);
     background-size: cover;
     position: absolute;
     top: -131px;
@@ -872,7 +872,7 @@ html:has(.is-open) {
     width: clamp(198px, 33.28%, 396px);
     height: auto;
     aspect-ratio: 396 / 397;
-    background-image: url(../images/bg_coffee-leaves2.png);
+    background-image: image-set(url(../images/bg_coffee-leaves2.png) 1x, url(../images/bg_coffee-leaves2@2x.png) 2x);
     background-size: cover;
     position: absolute;
     top: -133px;
@@ -890,7 +890,7 @@ html:has(.is-open) {
     width: clamp(169px, 30.47%, 390px);
     height: auto;
     aspect-ratio: 390 / 330;
-    background-image: url(../images/bg_coffee-beans2.png);
+    background-image: image-set(url(../images/bg_coffee-beans2.png) 1x, url(../images/bg_coffee-beans2@2x.png) 2x);
     background-size: cover;
     position: absolute;
     bottom: -112px;
@@ -1370,7 +1370,7 @@ html:has(.is-open) {
     width: clamp(204px, 33%, 354px);
     height: auto;
     aspect-ratio: 354 / 320;
-    background-image: url(../images/bg_plate.png);
+    background-image: image-set(url(../images/bg_plate.png) 1x, url(../images/bg_plate@2x.png) 2x);
     background-size: cover;
     position: absolute;
     top: -140px;
@@ -1559,7 +1559,7 @@ html:has(.is-open) {
     width: clamp(191px, 33.28%, 389px);
     height: auto;
     aspect-ratio: 389 / 359;
-    background-image: url(../images/bg_bread.png);
+    background-image: image-set(url(../images/bg_bread.png) 1x, url(../images/bg_bread@2x.png) 2x);
     background-size: cover;
     position: absolute;
     top: -176px;
@@ -1685,7 +1685,7 @@ html:has(.is-open) {
     width: clamp(128px, 26.64%, 341px);
     height: auto;
     aspect-ratio: 341 / 288;
-    background-image: url(../images/bg_coffee-beans3.png);
+    background-image: image-set(url(../images/bg_coffee-beans3.png) 1x, url(../images/bg_coffee-beans3@2x.png) 2x);
     background-size: cover;
     position: absolute;
     top: -190px;
