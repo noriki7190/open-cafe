@@ -428,12 +428,6 @@ html:has(.is-open) {
     padding: 12px;
   }
 
-  & a {
-    color: inherit;
-    display: flex;
-    gap: 16px;
-  }
-
   &::after {
     content: '';
     position: absolute;
@@ -452,10 +446,25 @@ html:has(.is-open) {
   }
 }
 
+.pickup-news__link {
+  color: inherit;
+  display: flex;
+  gap: 16px;
+
+  &:hover {
+    opacity: 1;
+
+    & .pickup-news__thumb img {
+      transform: scale(1.05);
+    }
+  }
+}
+
 .pickup-news__thumb {
   width: 120px;
   height: 120px;
   flex-shrink: 0;
+  overflow: hidden;
 
   @include mq('md') {
     width: 100px;
@@ -467,6 +476,7 @@ html:has(.is-open) {
     height: auto;
     object-fit: cover;
     aspect-ratio: 1 / 1;
+    transition: .3s transform;
   }
 }
 
@@ -475,6 +485,7 @@ html:has(.is-open) {
   position: absolute;
   top: 8px;
   left: -8px;
+  z-index: 10;
 }
 
 .pickup-news__contents {
@@ -1438,12 +1449,21 @@ html:has(.is-open) {
 
 .news-card__link {
   color: inherit;
+
+  &:hover {
+    opacity: 1;
+
+    & .news-card__thumb img {
+      transform: scale(1.05);
+    }
+  }
 }
 
 .news-card__cat {
   position: absolute;
   top: 12px;
   left: -8px;
+  z-index: 10;
 
   @include mq('md') {
     top: 10px;
@@ -1451,11 +1471,13 @@ html:has(.is-open) {
 }
 
 .news-card__thumb {
+  overflow: hidden;
 
   & img {
     width: 100%;
     height: auto;
     aspect-ratio: 255 / 159;
+    transition: .3s transform;
   }
 }
 
